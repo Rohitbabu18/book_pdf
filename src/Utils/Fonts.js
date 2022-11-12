@@ -5,7 +5,6 @@ const type = {
 };
 
 const size = {
-<<<<<<< HEAD
   h1: 38,
   h2: 34,
   h3: 30,
@@ -32,22 +31,6 @@ const weight = {
   w9: '900',
   bold: 'bold',
 };
-=======
-    h1: 38,
-    h2: 34,
-    h3: 30,
-    h4: 26,
-    h5: 20,
-    h6: 19,
-    input: 18,
-    regular: 16,
-    medium: 14,
-    small: 12,
-    das: 10,
-    tiny: 8.5,
-    pis: 6,
-}
->>>>>>> d01b6af3cde112fdf9c82171058ab6f0245cba56
 
 const style = {
   h1: {

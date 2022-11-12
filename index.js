@@ -3,8 +3,8 @@
  */
 
 import { AppRegistry } from 'react-native';
-import App from './App';
 import { name as appName } from './app.json';
-import HomeScreen from './src/Home/HomeScreen';
+import LoginScreen from './src/Auth/LoginScreen';
+import OTPVerify from './src/Auth/OtpVerifyScreen';
 
-AppRegistry.registerComponent(appName, () => HomeScreen);
+AppRegistry.registerComponent(appName, () => OTPVerify);

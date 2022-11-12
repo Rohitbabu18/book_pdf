@@ -10,13 +10,14 @@ import {
   Pressable,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Colors from '../Utils/Colors';
-import {horizScale, Spacer} from '../Utils/LayoutUtil';
+import { horizScale, Spacer } from '../Utils/LayoutUtil';
 import Fonts from '../Utils/Fonts';
 import CustomImage from '../Utils/Images';
+import { Rating } from 'react-native-ratings';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState('');
   const [book, setBook] = useState([
     {
@@ -110,7 +111,7 @@ const HomeScreen = () => {
             <Pressable
               style={styles.bottonView}
               onPress={() => {
-                alert('Coming Soon');
+                navigation.navigate('SubscribedBook')
               }}>
               <Text style={styles.bottonText}>Subscribed Books</Text>
             </Pressable>
@@ -142,14 +143,27 @@ const HomeScreen = () => {
           showsVerticalScrollIndicator={false}
           data={book}
           numColumns={2}
-          renderItem={({item, index}) => {
+          renderItem={({ item, index }) => {
             return (
               <Pressable
                 onPress={() => {
                   alert('Coming Soon');
                 }}
                 style={styles.bookContainer}>
-                <Image source={{uri: item.uri}} style={styles.bookImage} />
+                <Image source={{ uri: item.uri }} style={styles.bookImage} />
+                <View style={styles.bookrating}>
+                  <Rating
+                    type='star'
+
+                    ratingImage={CustomImage.star}
+                    ratingColor={Colors.yellow}
+                    ratingCount={5}
+                    startingValue={item.rating}
+                    imageSize={20}
+                    onFinishRating={this.ratingCompleted}
+                    style={{ paddingVertical: 10, backgroundColor: 'rgba(52,52,52,0)' }}
+                  />
+                </View>
                 <Text style={styles.bookName}>{item.name}</Text>
                 <Text style={styles.bookWriter}>{item.writer}</Text>
               </Pressable>
@@ -212,6 +226,9 @@ const styles = StyleSheet.create({
     width: '80%',
     borderRadius: horizScale(10),
     elevation: 10,
+  },
+  bookrating: {
+    position: 'absolute', top: horizScale(10), right: horizScale(20)
   },
   bookName: {
     textAlign: 'center',

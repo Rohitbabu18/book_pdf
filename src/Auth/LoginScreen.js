@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Image,
@@ -48,9 +48,9 @@ export default function LoginScreen(props) {
       <Spacer height={30} />
       <Image style={styles.img1} source={CustomImage.mobile}></Image>
       <Spacer height={30} />
-      <View style={{flexDirection: 'row'}}>
+      <View style={{ flexDirection: 'row' }}>
         <Image style={styles.img2} source={CustomImage.smartphone}></Image>
-        <View style={{width: '85%'}}>
+        <View style={{ width: '85%' }}>
           <View
             style={{
               justifyContent: 'flex-start',
@@ -74,7 +74,7 @@ export default function LoginScreen(props) {
               placeholder={'Mobile Number'}
               maxLength={10}
               onChangeText={value => {
-                setstate({...state, number: value});
+                setstate({ ...state, number: value });
               }}
               keyboardType={'number-pad'}
             />
@@ -95,11 +95,31 @@ export default function LoginScreen(props) {
         }}>
         <Text style={GloableStyle.buttonText}>Send</Text>
       </TouchableOpacity>
+      <View style={styles.signupView}>
+        <Text style={styles.text}>Not a member ? </Text>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate('Registration');
+          }}>
+          <Text style={[styles.text, { color: Colors.button }]}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  signupView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginVertical: horizScale(30)
+  },
+  text: {
+    fontSize: Fonts.size.small,
+    color: Colors.gray,
+
+  },
   img1: {
     justifyContent: 'center',
     alignSelf: 'center',

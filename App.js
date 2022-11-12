@@ -1,13 +1,43 @@
 import 'react-native-gesture-handler';
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import SplashScreen from './src/Auth/SplashScreen';
+import LoginScreen from './src/Auth/LoginScreen';
+// import HomeScreen from './src/Home/HomeScreen';
+
+const Stack = createStackNavigator();
+
+const Auth = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName="splashscreen">
+      <Stack.Screen name="splashscreen" component={SplashScreen} />
+      <Stack.Screen name="loginscreen" component={LoginScreen} />
+    </Stack.Navigator>
+  );
+};
+
+// const Home = () => {
+//   return (
+//     <Stack.Navigator
+//       screenOptions={{headerShown: false}}
+//       initialRouteName="homescreen">
+//       <Stack.Screen name="homescreen" component={HomeScreen} />
+//     </Stack.Navigator>
+//   );
+// };
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
-  )
-}
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Auth" component={Auth} />
+        {/* <Stack.Screen name="Home" component={Home} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-export default App
+export default App;

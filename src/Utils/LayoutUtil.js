@@ -2,7 +2,6 @@ import React from 'react';
 import { Dimensions, View, Text as RNText } from 'react-native';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import moment from 'moment';
 
 //const countries = require('i18n-iso-countries')
 //countries.registerLocale(require('i18n-iso-countries/langs/en.json'))
@@ -49,14 +48,14 @@ const supportedServices = [
 //   return arr;
 // }
 
-const concatDateTime = (dateStr, timeStr) =>
-    moment(`${dateStr} ${timeStr}`).toDate();
-const fromUTC = (datetime) => {
-    return moment(`${datetime}Z`, 'YYYY-MM-DD HH:mm:ssZ').toDate();
-};
-const utcDateToString = (momentInUTC) => {
-    return moment.utc(momentInUTC).format('YYYY-MM-DDTHH:mm:ss.SSS[Z]');
-};
+// const concatDateTime = (dateStr, timeStr) =>
+//     moment(`${dateStr} ${timeStr}`).toDate();
+// const fromUTC = (datetime) => {
+//     return moment(`${datetime}Z`, 'YYYY-MM-DD HH:mm:ssZ').toDate();
+// };
+// const utcDateToString = (momentInUTC) => {
+//     return moment.utc(momentInUTC).format('YYYY-MM-DDTHH:mm:ss.SSS[Z]');
+// };
 
 const validateEmail = (email) => {
     let re = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
@@ -283,8 +282,8 @@ export {
     //  getErrorMessage,
     //countryOptions,
     isValidCountryCode,
-    concatDateTime,
-    fromUTC,
+    // concatDateTime,
+    // fromUTC,
     // coverImages,
     formatAssessment,
     SectionHeader,
@@ -298,7 +297,7 @@ export {
     HeavyText,
     FEE_CURRENCY,
     CALENDAR_TITLE,
-    utcDateToString,
+    // utcDateToString,
     validateEmail,
     APP_NAME,
 };

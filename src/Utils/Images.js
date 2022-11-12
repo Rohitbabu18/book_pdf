@@ -1,5 +1,6 @@
 const CustomImage = {
-    Homebg: require('../../assets/Images/home_bg.png'),
-    Auralogo: require('../../assets/Images/Group2351.png'),
+    back: require('../../assets/icons/back.png'),
+    search: require('../../assets/icons/search.png'),
+    profile: require('../../assets/images/profile.png'),
 }
 export default CustomImage;

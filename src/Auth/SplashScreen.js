@@ -11,21 +11,23 @@ import React from 'react';
 import CustomImage from '../Utils/Images';
 import Fonts from '../Utils/Fonts';
 import Colors from '../Utils/Colors';
-import {horizScale} from '../Utils/LayoutUtil';
+import { horizScale } from '../Utils/LayoutUtil';
 
-const SplashScreen = ({navigation}) => {
+const SplashScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{backgroundColor: Colors.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
-      <View style={styles.mainView}>
+      <View style={{ flex: 0.6, justifyContent: 'center', alignItems: 'center' }}>
         <Image source={CustomImage.splshicon} style={styles.splashicon} />
-        <View>
-          <Text style={styles.textBold}>Read your Favourite books</Text>
-          <Text style={styles.textNormal}>
-            All your favourite book in one place, read{'\n'} any book staying at
-            home, on travelling, or {'\n'} anywhere else
-          </Text>
-        </View>
+      </View>
+      <View style={{ flex: 0.2, justifyContent: 'space-around', alignItems: 'center' }}>
+        <Text style={styles.textBold}>Read your Favourite books</Text>
+        <Text style={styles.textNormal}>
+          All your favourite book in one place, read{'\n'} any book staying at
+          home, on travelling, or {'\n'} anywhere else
+        </Text>
+      </View>
+      <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity
           style={styles.btn}
           onPress={() => {
@@ -33,7 +35,7 @@ const SplashScreen = ({navigation}) => {
           }}>
           <Text style={styles.btnText}>Sign Up</Text>
         </TouchableOpacity>
-      </View>
+      </View >
     </SafeAreaView>
   );
 };
@@ -53,13 +55,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: horizScale(30),
     paddingVertical: horizScale(13),
     borderRadius: horizScale(7),
-    marginVertical: horizScale(50),
   },
   textNormal: {
     fontSize: Fonts.size.medium,
     color: Colors.gray,
     textAlign: 'center',
-    marginVertical: horizScale(20),
   },
   textBold: {
     fontSize: Fonts.size.h5,
@@ -70,10 +70,6 @@ const styles = StyleSheet.create({
   splashicon: {
     alignSelf: 'center',
     height: horizScale(350),
-    marginVertical: horizScale(50),
   },
-  mainView: {
-    height: '100%',
-    width: '100%',
-  },
+
 });

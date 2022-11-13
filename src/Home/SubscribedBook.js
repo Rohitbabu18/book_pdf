@@ -86,10 +86,10 @@ export default function SubscribedBook(props) {
                     style={GloableStyle.backView}>
                     <Image
                         source={CustomImage.back}
-                        style={GloableStyle.backText}
+                        style={GloableStyle.backImage}
                     />
                 </TouchableOpacity>
-                <MediumText style={styles.headertext}>Back</MediumText>
+                <MediumText style={GloableStyle.backText}>Subscribed Books</MediumText>
                 {/* <HeaderNotificationAndMessage {...props} /> */}
             </View>
             <TouchableOpacity onPress={() => { alert('Coming Soon') }}
@@ -277,5 +277,6 @@ const styles = StyleSheet.create({
         fontSize: Fonts.size.h6,
         width: '50%',
         color: Colors.black,
+
     },
 })

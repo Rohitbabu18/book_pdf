@@ -82,14 +82,16 @@ const GloableStyle = StyleSheet.create({
     backView: {
         flexDirection: 'row',
         marginLeft: horizScale(20),
-        marginTop: vertScale(10),
         alignItems: 'center',
+        justifyContent: 'flex-start',
     },
     backText: {
         color: Colors.gray,
         marginLeft: horizScale(10),
         fontSize: Fonts.size.medium,
-        fontFamily: 'WorkSans-Regular'
+        fontFamily: 'WorkSans-Regular',
+        textAlignVertical: 'center',
+        height: '100%'
     },
     drawerButton: {
         backgroundColor: Colors.white,
@@ -123,6 +125,12 @@ const GloableStyle = StyleSheet.create({
     smallIcon: {
         height: horizScale(15),
         width: horizScale(15),
+        resizeMode: 'contain',
+        tintColor: Colors.button,
+    },
+    backImage: {
+        height: horizScale(25),
+        width: horizScale(25),
         resizeMode: 'contain',
         tintColor: Colors.button,
     },

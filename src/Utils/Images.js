@@ -10,5 +10,6 @@ const CustomImage = {
   bookmark: require('../../assets/icons/bookmark.png'),
   threedot: require('../../assets/icons/threedot.png'),
   forword: require('../../assets/icons/forword.png'),
+  checked: require('../../assets/icons/checked.png'),
 };
 export default CustomImage;

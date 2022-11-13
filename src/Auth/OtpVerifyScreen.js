@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Image,
@@ -51,15 +51,16 @@ export default function OTPVerify(props) {
         We've send an OTP to {state.number} mobile number. Please check your
         message box and enter number
       </Text>
+      <Spacer height={15} />
       <Image source={CustomImage.otp} style={styles.Image} />
-      <Spacer height={30} />
+      <Spacer height={15} />
       <OTPTextInput
         keyboardType={'ascii-capable'}
         inputCount={6}
         handleTextChange={value => {
-          setstate({...state, inputCode: value});
+          setstate({ ...state, inputCode: value });
         }}
-        textInputStyle={{width: '10%'}}
+        textInputStyle={{ width: '10%' }}
         // containerStyle={{ width: '90%' }}
         containerStyle={styles.pincode}
         offTintColor={Colors.gray}
@@ -86,7 +87,7 @@ export default function OTPVerify(props) {
             /> */}
       <Spacer height={20} />
       <TouchableOpacity
-        style={{alignSelf: 'flex-end'}}
+        style={{ alignSelf: 'flex-end' }}
         onPress={() => {
           alert('coming soon');
         }}>

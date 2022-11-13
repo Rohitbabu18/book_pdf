@@ -33,7 +33,7 @@ const SplashScreen = ({ navigation }) => {
           onPress={() => {
             navigation.replace('loginscreen');
           }}>
-          <Text style={styles.btnText}>Sign Up</Text>
+          <Text style={styles.btnText}>Sign In</Text>
         </TouchableOpacity>
       </View >
     </SafeAreaView>

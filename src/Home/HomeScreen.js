@@ -14,7 +14,12 @@ import Colors from '../Utils/Colors';
 import {horizScale, Spacer} from '../Utils/LayoutUtil';
 import Fonts from '../Utils/Fonts';
 import CustomImage from '../Utils/Images';
+import {Rating} from 'react-native-ratings';
 import FocusStatusBar from '../Utils/components/StatusBar';
+
+import FocusStatusBar from '../Utils/components/StatusBar';
+
+import {Rating} from 'react-native-ratings';
 
 const HomeScreen = ({navigation}) => {
   const [search, setSearch] = useState('');
@@ -113,7 +118,7 @@ const HomeScreen = ({navigation}) => {
             <Pressable
               style={styles.bottonView}
               onPress={() => {
-                alert('Coming Soon');
+                navigation.navigate('SubscribedBook');
               }}>
               <Text style={styles.bottonText}>Subscribed Books</Text>
             </Pressable>
@@ -121,7 +126,7 @@ const HomeScreen = ({navigation}) => {
           <View style={styles.searchView}>
             <TextInput
               style={styles.searchText}
-              placeholder="Find Books Here ..."
+              placeholder="Find Books Here..."
               placeholderTextColor={Colors.gray}
               onChangeText={value => {
                 setSearch(value);
@@ -153,6 +158,21 @@ const HomeScreen = ({navigation}) => {
                 }}
                 style={styles.bookContainer}>
                 <Image source={{uri: item.uri}} style={styles.bookImage} />
+                {/* <View style={styles.bookrating}>
+                  <Rating
+                    type="star"
+                    ratingImage={CustomImage.star}
+                    ratingColor={Colors.yellow}
+                    ratingCount={5}
+                    startingValue={item.rating}
+                    imageSize={20}
+                    onFinishRating={this.ratingCompleted}
+                    style={{
+                      paddingVertical: 10,
+                      backgroundColor: 'rgba(52,52,52,0)',
+                    }}
+                  />
+                </View> */}
                 <Text style={styles.bookName}>{item.name}</Text>
                 <Text style={styles.bookWriter}>{item.writer}</Text>
               </Pressable>
@@ -169,6 +189,7 @@ const styles = StyleSheet.create({
   bottonText: {
     fontSize: Fonts.size.small,
     color: Colors.black,
+    fontWeight: Fonts.weight.bold,
   },
   bottonView: {
     backgroundColor: Colors.white,
@@ -216,6 +237,11 @@ const styles = StyleSheet.create({
     borderRadius: horizScale(10),
     elevation: 10,
   },
+  // bookrating: {
+  //   position: 'absolute',
+  //   top: horizScale(10),
+  //   right: horizScale(20),
+  // },
   bookName: {
     textAlign: 'center',
     fontSize: Fonts.size.regular,

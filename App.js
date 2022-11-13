@@ -8,6 +8,8 @@ import OTPVerify from './src/Auth/OtpVerifyScreen';
 import HomeScreen from './src/Home/HomeScreen';
 import BookDetails from './src/Home/BookDetails';
 import PdfScreen from './src/Home/PdfScreen';
+import Registration from './src/Auth/SignupScreen';
+import SubscribedBook from './src/Home/SubscribedBook';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +21,7 @@ const Auth = () => {
       <Stack.Screen name="splashscreen" component={SplashScreen} />
       <Stack.Screen name="loginscreen" component={LoginScreen} />
       <Stack.Screen name="OTPVerify" component={OTPVerify} />
+      {/* <Stack.Screen name="Registration" component={Registration} /> */}
     </Stack.Navigator>
   );
 };
@@ -29,8 +32,11 @@ const Home = () => {
       screenOptions={{headerShown: false}}
       initialRouteName="homescreen">
       <Stack.Screen name="homescreen" component={HomeScreen} />
+
       <Stack.Screen name="BookDetails" component={BookDetails} />
       <Stack.Screen name="PdfScreen" component={PdfScreen} />
+
+      <Stack.Screen name="SubscribedBook" component={SubscribedBook} />
     </Stack.Navigator>
   );
 };

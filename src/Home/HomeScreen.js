@@ -14,12 +14,8 @@ import Colors from '../Utils/Colors';
 import {horizScale, Spacer} from '../Utils/LayoutUtil';
 import Fonts from '../Utils/Fonts';
 import CustomImage from '../Utils/Images';
-import {Rating} from 'react-native-ratings';
 import FocusStatusBar from '../Utils/components/StatusBar';
-
-import FocusStatusBar from '../Utils/components/StatusBar';
-
-import {Rating} from 'react-native-ratings';
+// import {Rating} from 'react-native-ratings';
 
 const HomeScreen = ({navigation}) => {
   const [search, setSearch] = useState('');
@@ -173,8 +169,12 @@ const HomeScreen = ({navigation}) => {
                     }}
                   />
                 </View> */}
-                <Text style={styles.bookName}>{item.name}</Text>
-                <Text style={styles.bookWriter}>{item.writer}</Text>
+                <Text numberOfLines={2} style={styles.bookName}>
+                  {item.name}
+                </Text>
+                <Text numberOfLines={1} style={styles.bookWriter}>
+                  {item.writer}
+                </Text>
               </Pressable>
             );
           }}
@@ -245,13 +245,14 @@ const styles = StyleSheet.create({
   bookName: {
     textAlign: 'center',
     fontSize: Fonts.size.regular,
+    fontWeight: '600',
     color: Colors.black,
     width: '80%',
   },
   bookWriter: {
     textAlign: 'center',
     fontSize: Fonts.size.das,
-    color: Colors.black,
+    color: Colors.gray,
     width: '85%',
   },
   bookContainer: {

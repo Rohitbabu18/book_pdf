@@ -13,6 +13,7 @@ import CustomImage from '../Utils/Images';
 import Colors from '../Utils/Colors';
 import {horizScale} from '../Utils/LayoutUtil';
 import Fonts from '../Utils/Fonts';
+import {Rating} from 'react-native-ratings';
 
 const BookDetails = ({navigation, route}) => {
   const [bookmark, setBookmark] = useState(false);
@@ -48,6 +49,21 @@ const BookDetails = ({navigation, route}) => {
         <Image source={{uri: item.uri}} style={styles.mainImg} />
         <Text style={styles.bookName}>{item.name}</Text>
         <Text style={styles.writerName}>{item.writer}</Text>
+        <View style={styles.bookrating}>
+          <Rating
+            type="star"
+            ratingImage={CustomImage.star}
+            ratingColor={Colors.yellow}
+            ratingCount={5}
+            startingValue={item.rating}
+            imageSize={20}
+            onFinishRating={this.ratingCompleted}
+            style={{
+              paddingVertical: 10,
+              backgroundColor: 'rgba(52,52,52,0)',
+            }}
+          />
+        </View>
         <View style={styles.contentView}>
           <Text style={styles.aboutText}>About the author</Text>
           <Text style={styles.aboutDetails}>

@@ -1,7 +1,7 @@
 const Colors = {
   statusBar: 'hsl(0,0%,90%)',
   appBack: 'hsl(0,0%,90%)',
-  button: '#d55556', //'#b5734c' #cf5953
+  button: '#d55556', //'#b5734c' #cf5953 '#e42728'
 
   statusbarTans: 'rgbs(52,52,52,0.8)',
   primary: '#1292B4',

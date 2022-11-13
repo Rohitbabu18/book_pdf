@@ -9,5 +9,6 @@ const CustomImage = {
   leftarr: require('../../assets/icons/leftarr.png'),
   bookmark: require('../../assets/icons/bookmark.png'),
   threedot: require('../../assets/icons/threedot.png'),
+  forword: require('../../assets/icons/forword.png'),
 };
 export default CustomImage;

@@ -72,7 +72,20 @@ export default function SubscribedBook(props) {
 
     })
 
-
+    // import {Slider} from '@miblanchard/react-native-slider';
+    // <Text style={styles.distance}>Current Radius : {distance} KM</Text>
+    // <Slider
+    //   minimumValue={0}
+    //   maximumValue={100}
+    //   value={distance}
+    //   onValueChange={value => setdistance(parseInt(value))}
+    //   trackStyle={{color: 'red'}}
+    //   containerStyle={{
+    //     width: '80%',
+    //     alignSelf: 'center',
+    //     marginVertical: horizScale(15),
+    //   }}
+    // />
     return (
         <SafeAreaView style={GloableStyle.container}>
             <FocusStatusBar backgroundColor={Colors.statusBar} barStyle='dark-content' />

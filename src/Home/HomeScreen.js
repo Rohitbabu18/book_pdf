@@ -2,7 +2,6 @@ import {
   View,
   Text,
   SafeAreaView,
-  StatusBar,
   FlatList,
   Image,
   StyleSheet,
@@ -15,8 +14,9 @@ import Colors from '../Utils/Colors';
 import {horizScale, Spacer} from '../Utils/LayoutUtil';
 import Fonts from '../Utils/Fonts';
 import CustomImage from '../Utils/Images';
+import FocusStatusBar from '../Utils/components/StatusBar';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [search, setSearch] = useState('');
   const [book, setBook] = useState([
     {
@@ -95,7 +95,10 @@ const HomeScreen = () => {
   ]);
   return (
     <SafeAreaView>
-      <StatusBar backgroundColor={Colors.cosmic} barStyle={'light-content'} />
+      <FocusStatusBar
+        backgroundColor={Colors.cosmic}
+        barStyle={'light-content'}
+      />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.headerContainer}>
           <View style={styles.headerView}>
@@ -146,7 +149,7 @@ const HomeScreen = () => {
             return (
               <Pressable
                 onPress={() => {
-                  alert('Coming Soon');
+                  navigation.navigate('BookDetails', {item});
                 }}
                 style={styles.bookContainer}>
                 <Image source={{uri: item.uri}} style={styles.bookImage} />

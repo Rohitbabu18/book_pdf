@@ -6,5 +6,8 @@ const CustomImage = {
   smartphone: require('../../assets/icons/smartphone.png'),
   mobile: require('../../assets/icons/mobile.png'),
   otp: require('../../assets/icons/otp.png'),
+  leftarr: require('../../assets/icons/leftarr.png'),
+  bookmark: require('../../assets/icons/bookmark.png'),
+  threedot: require('../../assets/icons/threedot.png'),
 };
 export default CustomImage;

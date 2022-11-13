@@ -6,6 +6,8 @@ import SplashScreen from './src/Auth/SplashScreen';
 import LoginScreen from './src/Auth/LoginScreen';
 import OTPVerify from './src/Auth/OtpVerifyScreen';
 import HomeScreen from './src/Home/HomeScreen';
+import BookDetails from './src/Home/BookDetails';
+import PdfScreen from './src/Home/PdfScreen';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +29,8 @@ const Home = () => {
       screenOptions={{headerShown: false}}
       initialRouteName="homescreen">
       <Stack.Screen name="homescreen" component={HomeScreen} />
+      <Stack.Screen name="BookDetails" component={BookDetails} />
+      <Stack.Screen name="PdfScreen" component={PdfScreen} />
     </Stack.Navigator>
   );
 };

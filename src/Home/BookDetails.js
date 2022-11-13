@@ -7,19 +7,19 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FocusStatusBar from '../Utils/components/StatusBar';
 import CustomImage from '../Utils/Images';
 import Colors from '../Utils/Colors';
-import {horizScale} from '../Utils/LayoutUtil';
+import { horizScale } from '../Utils/LayoutUtil';
 import Fonts from '../Utils/Fonts';
-import {Rating} from 'react-native-ratings';
+import { Rating } from 'react-native-ratings';
 
-const BookDetails = ({navigation, route}) => {
+const BookDetails = ({ navigation, route }) => {
   const [bookmark, setBookmark] = useState(false);
-  const {item} = route.params;
+  const { item } = route.params;
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
       <FocusStatusBar
         backgroundColor={Colors.white}
         barStyle={'dark-content'}
@@ -40,13 +40,13 @@ const BookDetails = ({navigation, route}) => {
             source={CustomImage.bookmark}
             style={{
               ...styles.icon,
-              tintColor: bookmark ? Colors.button : Colors.black,
+              tintColor: bookmark ? Colors.yellow : Colors.black,
             }}
           />
         </TouchableOpacity>
       </View>
       <ScrollView>
-        <Image source={{uri: item.uri}} style={styles.mainImg} />
+        <Image source={{ uri: item.uri }} style={styles.mainImg} />
         <Text style={styles.bookName}>{item.name}</Text>
         <Text style={styles.writerName}>{item.writer}</Text>
         <View style={styles.bookrating}>
@@ -121,7 +121,8 @@ const BookDetails = ({navigation, route}) => {
         style={styles.readBtn}
         activeOpacity={0.8}
         onPress={() => {
-          navigation.navigate('PdfScreen', {item});
+          // navigation.navigate('PdfScreen', {item});
+          alert('Coming Soon')
         }}>
         <Text style={styles.readBtnText}>Subscribe</Text>
       </TouchableOpacity>

@@ -1,5 +1,4 @@
 const CustomImage = {
-  splshicon: require('../../assets/images/splashicon.png'),
   back: require('../../assets/icons/back.png'),
   search: require('../../assets/icons/search.png'),
   profile: require('../../assets/images/profile.png'),
@@ -11,5 +10,6 @@ const CustomImage = {
   threedot: require('../../assets/icons/threedot.png'),
   forword: require('../../assets/icons/forword.png'),
   checked: require('../../assets/icons/checked.png'),
+  book: require('../../assets/images/book.gif'),
 };
 export default CustomImage;

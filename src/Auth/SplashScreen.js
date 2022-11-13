@@ -11,14 +11,14 @@ import React from 'react';
 import CustomImage from '../Utils/Images';
 import Fonts from '../Utils/Fonts';
 import Colors from '../Utils/Colors';
-import {horizScale} from '../Utils/LayoutUtil';
+import { horizScale } from '../Utils/LayoutUtil';
 
-const SplashScreen = ({navigation}) => {
+const SplashScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: Colors.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
       <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
-      <View style={{flex: 0.6, justifyContent: 'center', alignItems: 'center'}}>
-        <Image source={CustomImage.splshicon} style={styles.splashicon} />
+      <View style={{ flex: 0.6, justifyContent: 'center', alignItems: 'center' }}>
+        <Image source={CustomImage.book} style={styles.splashicon} />
       </View>
       <View
         style={{
@@ -32,7 +32,7 @@ const SplashScreen = ({navigation}) => {
           home, on travelling, or {'\n'} anywhere else
         </Text>
       </View>
-      <View style={{flex: 0.2, justifyContent: 'center', alignItems: 'center'}}>
+      <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity
           style={styles.btn}
           onPress={() => {
@@ -75,6 +75,8 @@ const styles = StyleSheet.create({
   splashicon: {
     alignSelf: 'center',
     height: horizScale(350),
+    width: '80%',
+
   },
   forword: {
     height: horizScale(20),
